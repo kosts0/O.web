@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Пример веб-страницы</title>
+    <link rel="stylesheet" href="main.css">
+
+
+    <!--<script>src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" </script>-->
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //console.log( 'готов!' );
+            $(".btn-slide").click(function () {
+                $("#panel").slideToggle("slow");
+                $(this).toggleClass("active");
+            });
+            $(".btn-add").click(function () {
+
+                var str = $(".mytext").val();
+
+                /*$(".myclass1").append($("<li>",{
+                    'text': $('#contenInput').text($(".mytext").val())
+                }));*/
+                if (str.length) {
+                    $($("<li>", {
+                        'text': $(".mytext").val()
+                    }), "</li>").appendTo(".myclass1");
+                    $(".mytext").val('');
+                }
+            });
+            $(".btn-add").hover(function(){
+                $(this).css({'background-color':'rgb(178, 60, 241)'});
+            },
+            function(){
+                var c = $('.btn-add').css('background-color');
+                $(this).css({'background-color':'rgb(22, 9, 29)'});
+            });
+
+        });
+    </script>
+</head>
+
+
+
+
+<body>
+    <div class="wrapper">
+
+        <header class="hd">
+            <!--<h1 class = "space">LOGO</h1>!-->
+            <div>
+                <img src="download.jpg" alt="" width="100" height="75" class="ig">
+            </div>
+            <p class="teal">тел: 79-34-29<br> skld0@bk.ru</p>
+
+
+            <div class="clear"></div>
+        </header>
+
+        <ul class="main-menu">
+            <li>
+                <a href="scratch.html">Главная</a>
+
+            </li>
+            <li>
+                <a href="event.html">О проекте</a>
+
+            </li>
+            <li>
+                <a href="team.html">Над проектом работали</a>
+            </li>
+            <li>
+                <a href="contact.html">Контакты</a>
+            </li>
+        </ul>
+        <div class="content">
+            <div class="titl">
+                <h1>Реализация генетического алгоритма <br> Муравьиный алгоритм</h1>
+
+                <p class="tx">Решение проблем пассажиропотока города Томск</p>
+            </div>
+
+            <div class="clear"></div>
+            <div>
+                <div class="tx2">
+                    <h2>ЦЕЛИ И ЗАДАЧИ</h2>
+                </div>
+                <div class="clear"></div>
+                <div>
+                    <p>1:</p>
+                    <div>
+                        <p class="tt">Реализовать алгоритм оптимизации подражанием муравьиной колонии</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div>
+                    <p class="numb">2:</p>
+                    <div>
+                        <p class="tt">Применить реализованный алгоритм для решения задач оптимизации пассажиропотока в
+                            городе Томск</p>
+                    </div>
+                </div>
+
+            </div>
+            <div id="panel">
+                <ol class="myclass1">
+                    <li>Савченко Константин</li>
+                    <li>Коровкин Виталий</li>
+                </ol>
+                <input type="text" placeholder="Введите своё имя" class="mytext">
+                <p id="contenInput"></p>
+                <a href="#" class="btn-add">Добавить себя</a>
+            </div>
+            <p class="slide">
+                <a href="#" class="btn-slide">slide</a>
+            </p>
+        </div>
+
+        <footer>
+            Copyright Константин Савченко
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>
